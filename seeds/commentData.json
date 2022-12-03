@@ -1,0 +1,20 @@
+[
+    {
+        "content":"What's your favorite language?",
+        "date_created": "12/01/2022",
+        "user_id": 2,
+        "post_id": 1
+      },
+      {
+        "content":"What a great idea!",
+        "date_created": "12/02/2022",
+        "user_id": 3,
+        "post_id": 2
+      },
+      {
+        "content":"How's the cake?",
+        "date_created": "09/23/2021",
+        "user_id": 2,
+        "post_id": 3
+      }
+]
