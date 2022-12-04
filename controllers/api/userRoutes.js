@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post } = require('../../models');
+const { User } = require('../../models');
 
 
 
@@ -26,7 +26,6 @@ router.post('/', async (req, res) => {
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { userName: req.body.userName } });
-    
 
     if (!userData) {
       res

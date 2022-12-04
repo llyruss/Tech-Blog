@@ -1,11 +1,17 @@
 const router = require('express').Router();
 const { Post, User } = require('../../models');
+//const dateFormat = require('../../utils/helpers')
 const withAuth = require('../../utils/auth');
 
 router.get('/', async (req, res) => {
     try { 
       const postData = await Post.findAll({
-          include:[Comment, User]
+        include: [
+          {
+              model: User,
+              attributes: ["name"]
+          },
+       ],
     });
       res.status(200).json(postData)
     } catch(err) {
@@ -13,16 +19,14 @@ router.get('/', async (req, res) => {
     }
   });
 
-
 router.post('/', withAuth, async (req, res) => {
     try {
       const newPost = await Post.create({
         title: req.body.title,
         content: req.body.content,
-        comment_id: req.body.comment_id,
-        user_id: req.session.user_Id,
+        date_created: req.body.date_created,
+        user_id: req.session.user_id,
       });
-  
       res.status(200).json(newPost);
     } catch (err) {
       console.log(err)
