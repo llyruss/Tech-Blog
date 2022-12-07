@@ -61,7 +61,7 @@ router.get('/login', (req, res) => {
 router.get('/dashboard', async (req, res) => {
   try {
 
-    const userData = await User.findByPk(req.session.userId, {
+    const userData = await User.findByPk(req.session.user_id, {
       include: [{ model: Post }]
     })
 

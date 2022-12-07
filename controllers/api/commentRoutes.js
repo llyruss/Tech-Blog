@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
         include: [
             {
                 model: User,
-                attributes: ["userName", "id"]
+                attributes: ["name", "id"]
             },
         ],
       });
@@ -24,7 +24,7 @@ router.get('/', async (req, res) => {
       const newComment = await Comment.create({
         content: req.body.content,
         post_id: req.body.post_id,
-        user_id: req.session.userId
+        user_id: req.session.user_id
       });
   
       res.status(200).json(newComment);
