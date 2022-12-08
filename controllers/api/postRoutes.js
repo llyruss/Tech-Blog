@@ -25,7 +25,7 @@ router.post('/', withAuth, async (req, res) => {
         title: req.body.title,
         content: req.body.content,
         date_created: req.body.date_created,
-        user_id: req.session.user_id,
+        user_id: req.session.userId,
       });
       res.status(200).json(newPost);
     } catch (err) {
