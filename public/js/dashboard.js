@@ -100,8 +100,6 @@ for (let i=0; i < editBtns.length; i++) {
     post.parentNode.insertBefore(editPost, post.nextSibling)
     editDeleteDiv.setAttribute("class", "hide")
 
-    //  referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
-
     cancelEditBtn.addEventListener("click", () => {
       post.parentNode.removeChild(editPost)
       post.classList.remove("hide");
@@ -116,7 +114,6 @@ for (let i=0; i < editBtns.length; i++) {
       const response = await fetch(`/api/posts/${postId}`, {
         method: 'PUT',
         body: JSON.stringify({ 
-          // id: postId,
           title: newTitle,
           content: newContent
         }),
