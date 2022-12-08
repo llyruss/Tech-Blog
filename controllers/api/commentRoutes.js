@@ -40,7 +40,7 @@ router.get('/', async (req, res) => {
       const commentData = await Comment.update(req.body, {
         where: {
           id: req.params.id,
-          user_id: req.session.user_id,
+          user_id: req.session.userId,
         },
       });
   
@@ -60,7 +60,7 @@ router.get('/', async (req, res) => {
       const commentData = await Comment.destroy({
         where: {
           id: req.params.id,
-          user_id: req.session.user_id,
+          user_id: req.session.userId,
         },
       });
   
