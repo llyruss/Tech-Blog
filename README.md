@@ -15,5 +15,6 @@ The tech blog is a full-stack application utilizing, node, express, sequelize, a
 
 Find the github repo here: https://github.com/llyruss/Tech-Blog
 
-Find the deployed application here:
+Find the deployed application here: https://lilystechblog.herokuapp.com/
+
 
